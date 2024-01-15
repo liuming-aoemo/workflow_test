@@ -8,3 +8,5 @@ jobs:
       # - run: wmic os get version
       - run: ls C:\Android\android-sdk
       - run: echo $env:ANDROID_HOME
+      - run: ls $env:JAVA_HOME_11_X64
+      - run: echo $env:JAVA_HOME_11_X64
