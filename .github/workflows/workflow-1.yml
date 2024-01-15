@@ -5,6 +5,6 @@ jobs:
   job1:
     runs-on: windows-2022
     steps:
-      - run: wmic os get version
+      # - run: wmic os get version
       - run: ls C:\Android\android-sdk
       - run: echo $env:ANDROID_HOME
