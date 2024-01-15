@@ -11,7 +11,8 @@ jobs:
       - run: ls C:\Android\android-sdk\cmdline-tools
       - run: ls C:\Android\android-sdk
       - run: echo $env:ANDROID_HOME
-      - name: Android accept licenses
-        uses: SimonMarquis/android-accept-licenses@v1
+      # - name: Android accept licenses
+      #   uses: SimonMarquis/android-accept-licenses@v1
       - run: $env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat --list
+        shell: pwsh
           
