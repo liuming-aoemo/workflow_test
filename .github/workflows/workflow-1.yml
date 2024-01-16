@@ -10,11 +10,19 @@ jobs:
       # - run: ls C:\Android\android-sdk\cmdline-tools
       # - run: ls C:\Android\android-sdk
       # - run: echo $env:ANDROID_HOME
-      # - name: Android accept licenses
-      #   uses: SimonMarquis/android-accept-licenses@v1
       - run: systeminfo
-      - run: |
+      - name: 同意安卓许可
+        uses: SimonMarquis/android-accept-licenses@v1
+      - name: 查看安装的软件包
+        run: |
           & $env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat --list_installed
-      # - run: C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager.bat --list
-      #   shell: pwsh
+      - name: 安卓sdk软件包安装
+        run: |
+          & $env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat "ndk;19.0.5232133"
+      - name: 查看安装的软件包
+        run: |
+          & $env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat --list_installed
+      - run: |
+          ls C:\Android\android-sdk
+          ls C:\Android\android-sdk\ndk
           
